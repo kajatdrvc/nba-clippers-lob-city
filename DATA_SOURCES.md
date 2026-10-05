@@ -10,7 +10,7 @@ Used for NBA team wins, losses, games played, pace, and shooting/dunk statistics
 - Organization: Sports Reference LLC
 - Seasons used: 1999-00 through 2016-17
 
-The final combined analysis dataset is `data/cleaned/nba_1999_2017.csv`. The source-building logic is documented in `R/01_build_league_data.R`.
+The committed league analysis data are stored as six `nba_part_*.csv` files in `data/cleaned/`. `R/02_final_analysis.R` combines them automatically. The source-building logic is documented in `R/01_build_league_data.R`.
 
 ## Rodney Fort sports business data
 
@@ -38,4 +38,4 @@ Used in the written report for the 2015 Los Angeles-Long Beach-Anaheim metropoli
 
 The cleaned data committed to this repository are sufficient to reproduce the final regressions, robustness check, fitted-attendance analysis, and figures with `source("R/run_all.R")`.
 
-The original downloaded source files are not required to reproduce the reported results. Their source locations are listed above, and `R/01_build_league_data.R` records the construction logic for the league dataset.
+The original downloaded source files are not committed. Their source locations are listed above. `R/01_build_league_data.R` records the construction logic and can be used if the original Basketball-Reference and Fort downloads are placed in the expected `data/raw/` locations.
