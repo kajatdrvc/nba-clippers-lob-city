@@ -1,4 +1,4 @@
-# Lob City or Win City?
+# Lob City 
 
 ## Team quality, spectacle, and NBA home attendance
 
@@ -86,7 +86,3 @@ See [`DATA_SOURCES.md`](DATA_SOURCES.md) for links and details.
 - `R/01_build_league_data.R` documents how the league dataset was assembled from the original source downloads. Those external source downloads are not required to reproduce the reported models because the resulting cleaned dataset is committed here.
 - The 2011-12 NBA season was shortened to 66 games. The dependent variable is attendance per home game, which normalizes for the shorter schedule.
 - Model 3 fitted values for the Clippers are in-sample fitted values, not out-of-sample forecasts.
-
-## Author
-
-Sports Economics Data Project #1, 2026.
