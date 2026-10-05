@@ -1,0 +1,19 @@
+# R / RStudio session files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Quarto caches and generated site state
+.quarto/
+*_cache/
+*_files/
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Temporary files
+*.tmp
+*.bak
+~$*
