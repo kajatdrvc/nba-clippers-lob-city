@@ -30,7 +30,7 @@ The league dataset contains **535 team-season rows** from 1999-00 through 2016-1
 │   ├── 03_part1_figures.R
 │   └── run_all.R
 └── data/
-    └── cleaned/
+    └── cleaned/                    # committed analysis-ready CSVs
 ```
 
 ## Reproduce the reported analysis
@@ -82,7 +82,7 @@ See [`DATA_SOURCES.md`](DATA_SOURCES.md) for links and details.
 ## Reproducibility notes
 
 - All code uses paths relative to the repository root.
-- `data/cleaned/nba_1999_2017.csv` is the analysis dataset used for the final league regressions.
+- The league analysis data are stored as six `nba_part_*.csv` files in `data/cleaned/`; `R/02_final_analysis.R` combines them automatically.
 - `R/01_build_league_data.R` documents how the league dataset was assembled from the original source downloads. Those external source downloads are not required to reproduce the reported models because the resulting cleaned dataset is committed here.
 - The 2011-12 NBA season was shortened to 66 games. The dependent variable is attendance per home game, which normalizes for the shorter schedule.
 - Model 3 fitted values for the Clippers are in-sample fitted values, not out-of-sample forecasts.
