@@ -11,10 +11,15 @@ out_tab <- "output/tables"
 dir.create(out_fig, recursive = TRUE, showWarnings = FALSE)
 dir.create(out_tab, recursive = TRUE, showWarnings = FALSE)
 
-part2_data <- read_csv(
-  "data/cleaned/nba_1999_2017.csv",
-  show_col_types = FALSE
-) |>
+league_files <- list.files(
+  "data/cleaned",
+  pattern = "^nba_part_.*\\.csv$",
+  full.names = TRUE
+)
+
+part2_data <- league_files |>
+  map_dfr(~ read_csv(.x, show_col_types = FALSE)) |>
+  arrange(season, team) |>
   mutate(season = factor(season, levels = unique(season)))
 
 reg1 <- lm(home_attendance_pg ~ win_pct, data = part2_data)
